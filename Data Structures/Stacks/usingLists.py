@@ -10,9 +10,22 @@ class MaxSizeError(Exception):
         return self.message
 
 
-class Stack():
+class EmptyStackError(Exception):
+    """Raised when stack is empty."""
+
+    def __init__(self, message="Stack is empty") -> None:
+        self.message = message
+        super().__init__(self.message)
+
+    def __str__(self):
+        return self.message
+
+
+class Stack:
     
-    def __init__(self, elements=[], maxlen=None):
+    def __init__(self, elements=None, maxlen=None):
+        if elements is None:
+            elements = []
         self._maxlen = maxlen
         if self._maxlen:
             if len(elements) > self._maxlen:
@@ -27,13 +40,12 @@ class Stack():
                 self.elements.append(data)
             else:
                 raise MaxSizeError
-        
 
     def pop(self):
         if self.elements:
             return self.elements.pop()
         else:
-            return None
+            raise EmptyStackError
     
     def __len__(self):
         return len(self.elements)

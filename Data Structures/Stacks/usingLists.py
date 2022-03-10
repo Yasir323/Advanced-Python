@@ -63,12 +63,13 @@ class Stack:
         return f"{self.elements}"
 
 
-stack = Stack([1, 2, 3], maxlen=5)
-print(f"Original stack: {stack}")
-stack.push(4)
-print(f"After pushing 4: {stack}")
-stack.pop()
-print(f"After popping: {stack}")
-print(f"Length of stack: {len(stack)}")
-print(f"Top of the stack: {stack.peek()}")
-print(f"Is the stack empty: {stack.is_empty()}")
+if __name__ == '__main__':
+    stack = Stack([1, 2, 3], maxlen=5)
+    print(f"Original stack: {stack}")
+    stack.push(4)
+    print(f"After pushing 4: {stack}")
+    stack.pop()
+    print(f"After popping: {stack}")
+    print(f"Length of stack: {len(stack)}")
+    print(f"Top of the stack: {stack.peek()}")
+    print(f"Is the stack empty: {stack.is_empty()}")

@@ -113,48 +113,49 @@ class LinkedList:
         gc.collect()
 
 
-node1 = 1
-node2 = 2
-node3 = 3
-node4 = 5
+if __name__ == '__main__':
+    node1 = 1
+    node2 = 2
+    node3 = 3
+    node4 = 5
 
-linked_list = LinkedList(node1)
-print(linked_list)
-print(len(linked_list))
+    linked_list = LinkedList(node1)
+    print(linked_list)
+    print(len(linked_list))
 
-linked_list.push(node2)
-print(linked_list)
-print(len(linked_list))
+    linked_list.push(node2)
+    print(linked_list)
+    print(len(linked_list))
 
-linked_list.push(node3)
-print(linked_list)
-print(len(linked_list))
+    linked_list.push(node3)
+    print(linked_list)
+    print(len(linked_list))
 
-linked_list.push(node4, index=3)
-print(linked_list)
-print(len(linked_list))
+    linked_list.push(node4, index=3)
+    print(linked_list)
+    print(len(linked_list))
 
-linked_list.push(node4, index=2)
-print(linked_list)
-print(len(linked_list))
+    linked_list.push(node4, index=2)
+    print(linked_list)
+    print(len(linked_list))
 
-linked_list.push(node3, index=0)
-print(linked_list)
-print(len(linked_list))
+    linked_list.push(node3, index=0)
+    print(linked_list)
+    print(len(linked_list))
 
-try:
-    linked_list.push(node4, 8)
-except IndexError as e:
-    print(f"{type(e).__name__}: {str(e)}")
+    try:
+        linked_list.push(node4, 8)
+    except IndexError as e:
+        print(f"{type(e).__name__}: {str(e)}")
 
-linked_list.remove(index=0)
-print(linked_list)
-print(len(linked_list))
+    linked_list.remove(index=0)
+    print(linked_list)
+    print(len(linked_list))
 
-linked_list.remove(index=2)
-print(linked_list)
-print(len(linked_list))
+    linked_list.remove(index=2)
+    print(linked_list)
+    print(len(linked_list))
 
-linked_list.remove(index=1)
-print(linked_list)
-print(len(linked_list))
+    linked_list.remove(index=1)
+    print(linked_list)
+    print(len(linked_list))

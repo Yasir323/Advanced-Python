@@ -50,16 +50,17 @@ class MinHeap:
 
 
 # Driver program to test above function
-min_heap = MinHeap()
-min_heap.insert_key(3)
-min_heap.insert_key(2)
-min_heap.delete(1)
-min_heap.insert_key(15)
-min_heap.insert_key(5)
-min_heap.insert_key(4)
-min_heap.insert_key(45)
+if __name__ == '__main__':
+    min_heap = MinHeap()
+    min_heap.insert_key(3)
+    min_heap.insert_key(2)
+    min_heap.delete(1)
+    min_heap.insert_key(15)
+    min_heap.insert_key(5)
+    min_heap.insert_key(4)
+    min_heap.insert_key(45)
 
-print(min_heap.extract_min())
-print(min_heap.get_min())
-min_heap.decrease_key(2, 1)
-print(min_heap.get_min())
+    print(min_heap.extract_min())
+    print(min_heap.get_min())
+    min_heap.decrease_key(2, 1)
+    print(min_heap.get_min())

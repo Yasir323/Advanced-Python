@@ -78,29 +78,30 @@ class PriorityQueue:
         return f"{[(node.data, node.priority) for node in self.queue]}"
 
 
-queue = PriorityQueue(maxlen=3)
-print(f"Original queue: {queue}")
-queue.enqueue(Node('a', 10))
-print(f"After inserting data: {queue}")
-queue.enqueue(Node('f', 10))
-print(f"After inserting data: {queue}")
-queue.enqueue(Node('g', 20))
-print(f"After inserting data: {queue}")
-try:
-    print("Let's try to add another element.")
-    queue.enqueue(Node('h', 80))
-except MaxSizeError as e:
-    print(f"{type(e).__name__}: {e}")
-queue.dequeue()
-print(f"After using dequeue: {queue}")
-# queue.print_queue()
-print(f"Length of queue: {len(queue)}")
-print(f"Is the queue empty: {queue.is_empty()}")
-queue.dequeue()
-queue.dequeue()
-print(f"Is the queue empty: {queue.is_empty()}")
-try:
-    print("Let's try to remove another element.")
+if __name__ == '__main__':
+    queue = PriorityQueue(maxlen=3)
+    print(f"Original queue: {queue}")
+    queue.enqueue(Node('a', 10))
+    print(f"After inserting data: {queue}")
+    queue.enqueue(Node('f', 10))
+    print(f"After inserting data: {queue}")
+    queue.enqueue(Node('g', 20))
+    print(f"After inserting data: {queue}")
+    try:
+        print("Let's try to add another element.")
+        queue.enqueue(Node('h', 80))
+    except MaxSizeError as e:
+        print(f"{type(e).__name__}: {e}")
     queue.dequeue()
-except EmptyQueueError as e:
-    print(f"{type(e).__name__}: {e}")
+    print(f"After using dequeue: {queue}")
+    # queue.print_queue()
+    print(f"Length of queue: {len(queue)}")
+    print(f"Is the queue empty: {queue.is_empty()}")
+    queue.dequeue()
+    queue.dequeue()
+    print(f"Is the queue empty: {queue.is_empty()}")
+    try:
+        print("Let's try to remove another element.")
+        queue.dequeue()
+    except EmptyQueueError as e:
+        print(f"{type(e).__name__}: {e}")

@@ -24,7 +24,7 @@ mydict = {
 x = mycol.insert_one(mydict)
 
 # Check the document
-print(f'Data inserted successfullt? {x.acknowledged}.\nID: {x.inserted_id}')
+print(f'Data inserted successfully? {x.acknowledged}.\nID: {x.inserted_id}')
 
 # Insert many documents
 mylist = [
@@ -44,7 +44,7 @@ mylist = [
 y = mycol.insert_many(mylist)
 
 # Check the document
-print(f'Data inserted successfullt? {y.acknowledged}.\nID: {y.inserted_ids}')
+print(f'Data inserted successfully? {y.acknowledged}.\nID: {y.inserted_ids}')
 
 # Query one document
 a = mycol.find_one()

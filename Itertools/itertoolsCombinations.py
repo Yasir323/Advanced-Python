@@ -50,4 +50,5 @@ def combinations(iterable, r):
 import itertools as it
 
 print(list(it.combinations('ABCD', 2)))
+print(list(it.combinations([1,2,3,4], 2)))
 print(list(it.combinations(range(4), 3)))

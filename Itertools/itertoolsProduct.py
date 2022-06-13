@@ -28,4 +28,5 @@ def product(*args, repeat=1):
 import itertools as it
 
 print(list(it.product('ABCD', 'xy')))
+print(list(it.product([1, 2], [3, 4])))
 print(list(it.product(range(2), repeat=3)))

@@ -22,9 +22,9 @@ each individual thread. In your example, this is done with thread_local and
 get_session().
 """
 import concurrent.futures
-import requests
-import threading
 import time
+import threading
+import requests
 
 
 thread_local = threading.local()

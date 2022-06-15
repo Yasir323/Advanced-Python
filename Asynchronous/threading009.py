@@ -1,8 +1,8 @@
 # Synchronisation using Locks
 # Race Condition
 import time
-from concurrent.futures import ThreadPoolExecutor
 import threading
+from concurrent.futures import ThreadPoolExecutor
 
 
 class FakeDatabase:
@@ -36,7 +36,7 @@ class FakeDatabase:
 if __name__ == '__main__':
     database = FakeDatabase()
     print(f"Testing update. Starting value is {database.value}")
-    with ThreadPoolExecutor(max_workers=2) as executor:
+    with ThreadPoolExecutor(max_workers=5) as executor:
         for index in range(2):
             executor.submit(database.locked_update, index)
     print(f"Testing update. Ending value is {database.value}")

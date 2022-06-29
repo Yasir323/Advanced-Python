@@ -5,17 +5,20 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 thread_local = threading.local()
 
+
 def get_session():
     # Get a different session for each thread.
     if not hasattr(thread_local, "session"):
         thread_local.session = requests.Session()
     return thread_local.session
 
+
 def io_bound_job(site):
     session = get_session()
     # `timeout` is so small that a `ConnectTimeoutError` exception will be raised here.
     resp = session.get(site, timeout=0.001)
     print(f"Response status of {site} is {resp.status_code}.")
+
 
 def run_with_threads(n_jobs, sites):
     futures = []
@@ -35,6 +38,7 @@ def run_with_threads(n_jobs, sites):
     except Exception as exc:
         # If there is an exception raised in any thread, it will be caught here.
         print(f"An error occured in a thread: {exc}")
+
 
 sites = [f"https://httpbin.org/get?id={i}" for i in range(20)]
 

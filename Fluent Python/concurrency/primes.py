@@ -16,6 +16,7 @@ def is_prime(n: int) -> bool:
     return True
 
 
-ts = time.perf_counter()
-is_prime(5_000_111_000_222_021)
-print(f"Time taken: {time.perf_counter() - ts}")
+if __name__ == '__main__':
+    ts = time.perf_counter()
+    is_prime(5_000_111_000_222_021)
+    print(f"Time taken: {time.perf_counter() - ts}")

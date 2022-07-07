@@ -1,8 +1,7 @@
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
-import sys
-import os
 import _thread
+
 
 def temp(i):
     print('Going to Sleep ', i)

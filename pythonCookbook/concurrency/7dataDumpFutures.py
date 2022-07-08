@@ -16,5 +16,5 @@ def worker(multiple):
 with ThreadPoolExecutor(max_workers=3) as executor:
     executor.map(worker, (i + 1 for i in range(3)))
 
-print(data)
+print(len(data))
 print(time.perf_counter() - ts)

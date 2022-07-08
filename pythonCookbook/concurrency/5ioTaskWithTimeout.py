@@ -1,4 +1,5 @@
-import socket
+import requests
+from requests.exceptions import ConnectTimeout
 from threading import Thread
 
 
@@ -10,26 +11,22 @@ class IOTask:
     def terminate(self):
         self._running = False
 
-    def run(self, sock):
-        sock.settimeout(3)
+    def run(self, timeout):
         while self._running:
             # Perform a blocking operation with a
             # Timeout specified.
             try:
-                data = sock.recv(8192).decode()
-                data.append(all_data)
+                data = requests.get("https://www.python.org", timeout=timeout)
+                all_data.append(data.text)
                 break
-            except socket.timeout:
-                continue
+            except ConnectTimeout:
+                self.terminate()
         return
 
 
 all_data = []
 c = IOTask()
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(("www.python.org", 80))
-# print(s.recv(1024).decode())
-t = Thread(target=c.run, args=(s,))
+t = Thread(target=c.run, args=(0.3,))
 t.start()
 c.terminate()
 t.join()

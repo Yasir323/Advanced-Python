@@ -21,7 +21,7 @@ thread.start()
 # Once started, threads run independently until the
 # target function returns.
 
-# Wait here for the hread for finish
+# Wait here for the thread for finish
 thread.join()
 
 # Check status

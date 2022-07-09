@@ -1,5 +1,13 @@
+from threading import stack_size
 from socket import AF_INET, SOCK_STREAM, socket
 from concurrent.futures import ThreadPoolExecutor
+
+"""
+When using a large number of threads we can limit the
+size of the virtual memory the program is using by using
+threading.stack_size().
+"""
+stack_size(65536)
 
 
 def echo_client(sock, client_addr):

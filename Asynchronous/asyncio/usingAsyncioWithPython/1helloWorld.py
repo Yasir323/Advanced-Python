@@ -10,6 +10,6 @@ async def main():
 
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    asyncio.run(main())  # BLOCKING
     # asyncio provides a run() function to execute an async def function and all
     # other coroutines called from there, like sleep() in the main() function.
